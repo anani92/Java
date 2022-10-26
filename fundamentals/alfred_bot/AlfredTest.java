@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class AlfredTest {
     /*
     * This main method will always be the launch point for a Java application
@@ -22,6 +23,7 @@ public class AlfredTest {
             "Maybe that's what Batman is about. Not winning. But failing.."
         );
 
+
         // Print the greetings to test.
         System.out.println(testGreeting);
 
@@ -31,5 +33,23 @@ public class AlfredTest {
         System.out.println(alexisTest);
         System.out.println(alfredTest);
         System.out.println(notRelevantTest);
+        String[] fruits = {"banana", "pear", "papaya", "kiwi"};
+        // To swap the value at index 0 and index 3
+        String temp = fruits[0]; // assigns temp to "banana"
+        fruits[0] = fruits[3]; // { "kiwi", "pear", "papaya", "kiwi"}
+        fruits[3] = temp; // { "kiwi", "pear", "papaya", "banana"}copy
+        System.out.println(fruits.length);
+        System.out.println(fruits[0]);
+        ArrayList<String> snacks = new ArrayList<String> ();
+        snacks.add("Apples");
+        snacks.add("Pretzels");
+        snacks.add("Almonds");
+        snacks.add("Yogurt");
+        for(String snack : snacks ) {
+            if(snack.charAt(0) == 'A') {
+                snacks.remove(snack);
+	}
+}
+
     }
 }
