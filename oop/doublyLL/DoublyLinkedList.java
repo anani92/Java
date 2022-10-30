@@ -67,35 +67,31 @@ public class DoublyLinkedList {
     return size;
   }
 
-  public void insertAt(Node newNode, int index) {
-    if (this.head == null) {
-        if (index != 0) {
-            return;
-        } else {
-            this.head = newNode;
-        }
-    }
 
-    if (head != null && index == 0) {
-      newNode.next = head;
-      head = newNode;
-      return;
-    }
+  public void addAt(int value, int indexVal) {
+		Node newNode = new Node(value);
 
-    Node current = this.head;
-    Node previous = null;
+		if(indexVal==0) {
+			newNode.next = head;
+			head.previous = newNode;
+			head = newNode;
+		}else {
+			Node runner = head;
 
-    int i = 0;
+			for(int i=0; i<indexVal-1; i++) {
+				if(runner!=null) {
+					runner = runner.next;
+				}
+			}
 
-    while (i < index) {
-        previous = current;
-        current = current.next;
-        i++;
-    }
+			newNode.next = runner.next;
+			newNode.previous = runner;
+			runner.next = newNode;
+			if(newNode.next!=null) {
+				newNode.next.previous = newNode;
+			}
 
-    newNode.next = current;
-    previous.next = newNode;
-
-    }
+		}
+	}
 
   }

@@ -20,7 +20,7 @@ public class DoublyLinkedListTest {
         // dll.printValuesBackward();
 
         System.out.println(dll.contains(0));
-        dll.insertAt(n6,0);
+        dll.addAt(7,0);
 
         System.out.println(dll.size());
 
